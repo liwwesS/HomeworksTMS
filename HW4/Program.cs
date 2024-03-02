@@ -5,9 +5,9 @@
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Введите строку текста:");
-			string input = Console.ReadLine();
+			var input = Console.ReadLine();
 
-			bool exit = false;
+			var exit = false;
 			while (!exit)
 			{
 				Console.WriteLine("\nНа выбор следующие действия:");
@@ -17,7 +17,7 @@
 				Console.WriteLine("4. Выход.");
                 Console.Write("\nВаше действие: ");
 
-                string choice = Console.ReadLine();
+                var choice = Console.ReadLine();
 				switch (choice)
 				{
 					case "1":
@@ -41,16 +41,16 @@
 
 		static void FindWordsWithMostDigits(string text)
 		{
-			string[] words = text.Split(' ', '.', ',', '!', '?');
+			var words = text.Split(' ', '.', ',', '!', '?');
 
-			int maxDigitsCount = 0;
+			var maxDigitsCount = 0;
 
 			List<string> wordsWithMaxDigits = new List<string>();
 
 			foreach (var word in words)
 			{
-				int digitCount = 0;
-				foreach (char ch in word)
+				var digitCount = 0;
+				foreach (var ch in word)
 				{
 					if (char.IsDigit(ch))
 					{
@@ -86,16 +86,16 @@
 
 		static void FindLongestWord(string text)
 		{
-			string[] words = text.Split(' ', '.', ',', '!', '?');
+			var words = text.Split(' ', '.', ',', '!', '?');
 
-			string longestWord = "";
-			int longestLength = 0;
+			var longestWord = "";
+			var longestLength = 0;
 
 			Dictionary<string, int> wordCounts = new Dictionary<string, int>();
 
 			foreach (var word in words)
 			{
-				int length = word.Length;
+				var length = word.Length;
 				if (length > longestLength)
 				{
 					longestLength = length;
@@ -123,13 +123,13 @@
 		static void ReplaceDigitsWithWords(string text)
 		{
 			string[] numbersWords = { "ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };
-			string result = "";
+			var result = "";
 
-			foreach (char ch in text)
+			foreach (var ch in text)
 			{
 				if (char.IsDigit(ch))
 				{
-					int digit = ch - '0';
+					var digit = ch - '0';
 					result += numbersWords[digit];
 				}
 				else

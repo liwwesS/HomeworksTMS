@@ -48,8 +48,8 @@
 					Console.WriteLine($"Сумма чисел от 1 до введенного Вами числа = {sumNumbersToUserEntered}\n");
 					return;
 				}
-				else
-					Console.WriteLine("Ошибка ввода!\n");
+
+				Console.WriteLine("Ошибка ввода!\n");
 			}
         }
 
